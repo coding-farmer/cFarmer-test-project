@@ -40,41 +40,41 @@ prefix /  就是指webRoot 目录
 
 
 ### 模板需注意     
-\<!-- velocity视图解析器
-prefix 指source相对目录，可以在classpath 中，也可以在jar中。
---\>
-\<bean id="velocityViewResolver"
-     class="org.springframework.web.servlet.view.velocity.VelocityViewResolver"\>
-     \<property name="cache" value="false"\>\</property\>
-     \<property name="prefix" value="/META-INF/resources/WEB-INF/views/velocity/"/\>
-     \<property name="suffix" value=".html" /\>
-     \<property name="order" value="1"\>\</property\>
-     \<property name="exposeSpringMacroHelpers" value="true" /\>
-     \<property name="contentType" value="text/html;charset=utf-8" /\>
-     \<property name="exposeSessionAttributes" value="true"\>\</property\>
-\</bean\>
-
-\<!-- velocity环境配置
-resourceLoaderPath  指load目录的相对路径，如果非/开头，是webRoot 相对路径，可以是系统全路径
-也可以配置多个，用英文逗号分隔
-在加载模板时，会先用resourceLoaderPath + prefix 去找模板。
-当没有时，再去 项目的classpath jar 中找 prefix 路径
---\>
-\<bean id="velocityConfig"
-     class="org.springframework.web.servlet.view.velocity.VelocityConfigurer"\>
-     \<property name="velocityProperties"\>
-          \<props\>
-               \<prop key="input.encoding"\>UTF-8\</prop\>
-               \<prop key="output.encoding"\>UTF-8\</prop\>
-          \</props\>
-     \</property\>
-     \<property name="preferFileSystemAccess"\>
-          \<value\>false\</value\>
-     \</property\>
-
-     \<property name="resourceLoaderPath"\>
-          \<value\>WEB-INF/views/\</value\>
-     \</property\>
-\</bean\>
+		<!-- velocity视图解析器
+		prefix 指source相对目录，可以在classpath 中，也可以在jar中。
+		-->
+		<bean id="velocityViewResolver"
+		     class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		     <property name="cache" value="false"></property>
+		     <property name="prefix" value="/META-INF/resources/WEB-INF/views/velocity/"/>
+		     <property name="suffix" value=".html" />
+		     <property name="order" value="1"></property>
+		     <property name="exposeSpringMacroHelpers" value="true" />
+		     <property name="contentType" value="text/html;charset=utf-8" />
+		     <property name="exposeSessionAttributes" value="true"></property>
+		</bean>
+		
+		<!-- velocity环境配置
+		resourceLoaderPath  指load目录的相对路径，如果非/开头，是webRoot 相对路径，可以是系统全路径
+		也可以配置多个，用英文逗号分隔
+		在加载模板时，会先用resourceLoaderPath + prefix 去找模板。
+		当没有时，再去 项目的classpath jar 中找 prefix 路径
+		-->
+		<bean id="velocityConfig"
+		     class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		     <property name="velocityProperties">
+		          <props>
+		               <prop key="input.encoding">UTF-8</prop>
+		               <prop key="output.encoding">UTF-8</prop>
+		          </props>
+		     </property>
+		     <property name="preferFileSystemAccess">
+		          <value>false</value>
+		     </property>
+		
+		     <property name="resourceLoaderPath">
+		          <value>WEB-INF/views/</value>
+		     </property>
+		</bean>
 
 
