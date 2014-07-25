@@ -13,9 +13,9 @@ springmvc + servlet3 可以支持访问jar中jsp 文件
 
 
 ### servlet3 web.xml schema
-\<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-version="3.0"\>
+	<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+		version="3.0">
 
 
 ### jar中jsp 存放路径
@@ -36,7 +36,7 @@ prefix /  就是指webRoot 目录
 
 
 ### 静态资源与可以放到jar的 META-INF/resources 下
-\<mvc:resources location="/static/**" mapping="/static/**" /\>
+	<mvc:resources location="/static/**" mapping="/static/**" />
 
 
 ### 模板需注意     
