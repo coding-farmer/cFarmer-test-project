@@ -6,11 +6,8 @@
 
 package cn.test.spring;
 
-import java.util.logging.Logger;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * @HelloController.java
@@ -25,7 +22,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Controller
 @RequestMapping(value = "/")
 public class HelloController {
-
+	
+	@RequestMapping("")
+	public String index(){
+		return "servlet3/test/index";
+	}
+	
 	@RequestMapping(value = "/helloJSP")
 	public String hello() {
 		return "servlet3/test/helloJSP";
