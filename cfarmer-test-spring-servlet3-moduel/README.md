@@ -4,12 +4,12 @@ springmvc + servlet3 可以支持访问jar中jsp 文件
 
 
 ### servlet3 pom
-\<dependency\>
-     \<groupId\>javax.servlet\</groupId\>
-     \<artifactId\>javax.servlet-api\</artifactId\>
-     \<version\>3.1-b02\</version\>
-     \<type\>jar\</type\>
-\</dependency\>
+		<dependency>
+		     <groupId>javax.servlet</groupId>
+		     <artifactId>javax.servlet-api</artifactId>
+		     <version>3.1-b02</version>
+		     <type>jar</type>
+		</dependency>
 
 
 ### servlet3 web.xml schema
@@ -25,12 +25,12 @@ META-INF/resources
 
 
 ### spring-mvc xml 配置
-\<bean
-     class="org.springframework.web.servlet.view.InternalResourceViewResolver"\>
-     \<property name="prefix" value="/" /\>
-     \<property name="suffix" value=".jsp" /\>
-     \<property name="order" value="2" /\>
-\</bean\>
+		<bean
+		     class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		     <property name="prefix" value="/" />
+		     <property name="suffix" value=".jsp" />
+		     <property name="order" value="2" />
+		</bean>
 
 prefix /  就是指webRoot 目录
 
